@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { LoadingService } from '../../core/services/loading.service';
 import { CommonModule } from '@angular/common';
 
 interface Notification {
@@ -19,6 +20,7 @@ interface Notification {
 })
 export class AdminLayoutComponent {
   protected readonly authService = inject(AuthService);
+  protected readonly loadingService = inject(LoadingService);
   sidebarOpen = signal(true);
   notificationsOpen = signal(false);
 
