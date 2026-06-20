@@ -1,0 +1,25 @@
+<div>
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+
+  <div *ngIf="loading" class="text-gray-600">Loading...</div>
+  <div *ngIf="error" class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">{{ error }}</div>
+
+  <div *ngIf="summary && !loading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-lg shadow p-6">
+      <p class="text-sm font-medium text-gray-600">Total Users</p>
+      <p class="text-3xl font-bold text-gray-900 mt-2">{{ summary.totalUsers }}</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <p class="text-sm font-medium text-gray-600">Active Users</p>
+      <p class="text-3xl font-bold text-green-600 mt-2">{{ summary.activeUsers }}</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <p class="text-sm font-medium text-gray-600">Total Roles</p>
+      <p class="text-3xl font-bold text-blue-600 mt-2">{{ summary.totalRoles }}</p>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <p class="text-sm font-medium text-gray-600">Total Permissions</p>
+      <p class="text-3xl font-bold text-purple-600 mt-2">{{ summary.totalPermissions }}</p>
+    </div>
+  </div>
+</div>
