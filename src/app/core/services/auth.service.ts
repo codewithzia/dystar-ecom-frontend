@@ -11,7 +11,7 @@ export class AuthService {
   private readonly tokenService = inject(TokenService);
   private readonly apiUrl = environment.apiUrl;
 
-  private currentUserSubject = new BehaviorSubject<UserProfile | null>(null);
+  private currentUserSubject = new BehaviorSubject<UserProfile | null>(this.tokenService.getUser());
   currentUser$ = this.currentUserSubject.asObservable();
 
   isAuthenticated$ = new BehaviorSubject<boolean>(!!this.tokenService.getToken());
